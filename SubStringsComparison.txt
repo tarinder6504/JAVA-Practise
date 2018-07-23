@@ -1,0 +1,50 @@
+We define the following terms:
+
+    Lexicographical Order, also known as alphabetic or dictionary order, orders characters as follows:
+
+    For example, ball < cat, dog < dorm, Happy < happy, Zoo < ball.
+    A substring of a string is a contiguous block of characters in the string. For example, the substrings of abc are a, b, c, ab, bc, and abc.
+
+Given a string, s , and an integer, k , complete the function so that it finds the lexicographically smallest and largest substrings of length k.
+
+
+Solution:-
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+  
+    public static void getSmallestAndLargest(String s, int k) {
+         SortedSet<String> sets=new TreeSet<String>();
+    for(int i=0;i<=s.length()-k;i++){
+        sets.add(s.substring(i,i+k));
+    }
+    System.out.println(sets.first());
+    System.out.println(sets.last());
+        
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.next();
+        int k = scan.nextInt();
+        scan.close();
+      
+        getSmallestAndLargest(s, k);
+    }
+}
+
+
+public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.next();
+        int k = scan.nextInt();
+        scan.close();
+      
+        System.out.println(getSmallestAndLargest(s, k));
+    }
+} 
